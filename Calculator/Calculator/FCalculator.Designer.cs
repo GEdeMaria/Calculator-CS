@@ -482,6 +482,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(273, 359);
             Controls.Add(tlpMain);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FCalculator";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Calculator";
