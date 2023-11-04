@@ -170,9 +170,8 @@ namespace GEM.Calculator
         }
         public void PressClearEntry()
         {
-            _entry = "0";
+            Entry = "0";
             _hasDecimal = false;
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Entry)));
         }
         public void PressClear()
         {

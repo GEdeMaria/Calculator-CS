@@ -76,7 +76,7 @@
             lblEquation.Name = "lblEquation";
             lblEquation.Size = new Size(267, 32);
             lblEquation.TabIndex = 0;
-            lblEquation.Text = "Equation Space";
+            lblEquation.Text = "0";
             lblEquation.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblIO
@@ -87,7 +87,7 @@
             lblIO.Name = "lblIO";
             lblIO.Size = new Size(267, 64);
             lblIO.TabIndex = 1;
-            lblIO.Text = "IO Space";
+            lblIO.Text = "0";
             lblIO.TextAlign = ContentAlignment.MiddleRight;
             // 
             // btnMemoryClear
