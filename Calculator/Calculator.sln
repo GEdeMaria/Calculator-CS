@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Calculator.csproj", "{A694D0AD-9ACA-447F-927E-75A90D0323CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator", "Calculator\Calculator.csproj", "{A694D0AD-9ACA-447F-927E-75A90D0323CB}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SharedParts", "SharedParts\SharedParts.shproj", "{E5B5225F-1249-4F0A-A3BB-30E38CB0E958}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,5 +23,9 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7FA67C62-C93B-4C9E-8D69-8CF61B64897D}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		SharedParts\SharedParts.projitems*{a694d0ad-9aca-447f-927e-75a90d0323cb}*SharedItemsImports = 5
+		SharedParts\SharedParts.projitems*{e5b5225f-1249-4f0a-a3bb-30e38cb0e958}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

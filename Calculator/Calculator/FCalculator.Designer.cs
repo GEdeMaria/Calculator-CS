@@ -35,7 +35,6 @@
             btnMemoryAdd = new Button();
             btnMemorySubtract = new Button();
             btnMemorySave = new Button();
-            btnMemoryAccess = new Button();
             btnPercent = new Button();
             btnClearEntry = new Button();
             btnClear = new Button();
@@ -61,17 +60,18 @@
             btn0 = new Button();
             btnNegate = new Button();
             tlpMain = new TableLayoutPanel();
-            tlpMemory = new TableLayoutPanel();
             tlpKeys = new TableLayoutPanel();
+            tlpMemory = new TableLayoutPanel();
             tlpMain.SuspendLayout();
-            tlpMemory.SuspendLayout();
             tlpKeys.SuspendLayout();
+            tlpMemory.SuspendLayout();
             SuspendLayout();
             // 
             // lblEquation
             // 
             lblEquation.AutoSize = true;
             lblEquation.Dock = DockStyle.Fill;
+            lblEquation.ForeColor = SystemColors.ControlDarkDark;
             lblEquation.Location = new Point(3, 0);
             lblEquation.Name = "lblEquation";
             lblEquation.Size = new Size(267, 32);
@@ -95,60 +95,55 @@
             btnMemoryClear.Dock = DockStyle.Fill;
             btnMemoryClear.Location = new Point(3, 3);
             btnMemoryClear.Name = "btnMemoryClear";
-            btnMemoryClear.Size = new Size(38, 24);
+            btnMemoryClear.Size = new Size(47, 24);
             btnMemoryClear.TabIndex = 2;
             btnMemoryClear.Text = "MC";
             btnMemoryClear.UseVisualStyleBackColor = true;
+            btnMemoryClear.Click += btnMemoryClear_Click;
             // 
             // btnMemoryReturn
             // 
             btnMemoryReturn.Dock = DockStyle.Fill;
-            btnMemoryReturn.Location = new Point(47, 3);
+            btnMemoryReturn.Location = new Point(56, 3);
             btnMemoryReturn.Name = "btnMemoryReturn";
-            btnMemoryReturn.Size = new Size(38, 24);
+            btnMemoryReturn.Size = new Size(47, 24);
             btnMemoryReturn.TabIndex = 3;
             btnMemoryReturn.Text = "MR";
             btnMemoryReturn.UseVisualStyleBackColor = true;
+            btnMemoryReturn.Click += btnMemoryReturn_Click;
             // 
             // btnMemoryAdd
             // 
             btnMemoryAdd.Dock = DockStyle.Fill;
-            btnMemoryAdd.Location = new Point(91, 3);
+            btnMemoryAdd.Location = new Point(109, 3);
             btnMemoryAdd.Name = "btnMemoryAdd";
-            btnMemoryAdd.Size = new Size(38, 24);
+            btnMemoryAdd.Size = new Size(47, 24);
             btnMemoryAdd.TabIndex = 4;
             btnMemoryAdd.Text = "M+";
             btnMemoryAdd.UseVisualStyleBackColor = true;
+            btnMemoryAdd.Click += btnMemoryAdd_Click;
             // 
             // btnMemorySubtract
             // 
             btnMemorySubtract.Dock = DockStyle.Fill;
-            btnMemorySubtract.Location = new Point(135, 3);
+            btnMemorySubtract.Location = new Point(162, 3);
             btnMemorySubtract.Name = "btnMemorySubtract";
-            btnMemorySubtract.Size = new Size(38, 24);
+            btnMemorySubtract.Size = new Size(47, 24);
             btnMemorySubtract.TabIndex = 5;
             btnMemorySubtract.Text = "M-";
             btnMemorySubtract.UseVisualStyleBackColor = true;
+            btnMemorySubtract.Click += btnMemorySubtract_Click;
             // 
             // btnMemorySave
             // 
             btnMemorySave.Dock = DockStyle.Fill;
-            btnMemorySave.Location = new Point(179, 3);
+            btnMemorySave.Location = new Point(215, 3);
             btnMemorySave.Name = "btnMemorySave";
-            btnMemorySave.Size = new Size(38, 24);
+            btnMemorySave.Size = new Size(49, 24);
             btnMemorySave.TabIndex = 6;
             btnMemorySave.Text = "MS";
             btnMemorySave.UseVisualStyleBackColor = true;
-            // 
-            // btnMemoryAccess
-            // 
-            btnMemoryAccess.Dock = DockStyle.Fill;
-            btnMemoryAccess.Location = new Point(223, 3);
-            btnMemoryAccess.Name = "btnMemoryAccess";
-            btnMemoryAccess.Size = new Size(41, 24);
-            btnMemoryAccess.TabIndex = 7;
-            btnMemoryAccess.Text = "M>";
-            btnMemoryAccess.UseVisualStyleBackColor = true;
+            btnMemorySave.Click += btnMemorySave_Click;
             // 
             // btnPercent
             // 
@@ -159,6 +154,7 @@
             btnPercent.TabIndex = 8;
             btnPercent.Text = "%";
             btnPercent.UseVisualStyleBackColor = true;
+            btnPercent.Click += btnPercent_Click;
             // 
             // btnClearEntry
             // 
@@ -169,6 +165,7 @@
             btnClearEntry.TabIndex = 9;
             btnClearEntry.Text = "CE";
             btnClearEntry.UseVisualStyleBackColor = true;
+            btnClearEntry.Click += btnClearEntry_Click;
             // 
             // btnClear
             // 
@@ -179,6 +176,7 @@
             btnClear.TabIndex = 10;
             btnClear.Text = "C";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnBackspace
             // 
@@ -189,6 +187,7 @@
             btnBackspace.TabIndex = 11;
             btnBackspace.Text = "BCK";
             btnBackspace.UseVisualStyleBackColor = true;
+            btnBackspace.Click += btnBackspace_Click;
             // 
             // btnInverse
             // 
@@ -199,6 +198,7 @@
             btnInverse.TabIndex = 12;
             btnInverse.Text = "1/x";
             btnInverse.UseVisualStyleBackColor = true;
+            btnInverse.Click += btnInverse_Click;
             // 
             // btnSquare
             // 
@@ -209,6 +209,7 @@
             btnSquare.TabIndex = 13;
             btnSquare.Text = "x^2";
             btnSquare.UseVisualStyleBackColor = true;
+            btnSquare.Click += btnSquare_Click;
             // 
             // btnRoot
             // 
@@ -219,6 +220,7 @@
             btnRoot.TabIndex = 14;
             btnRoot.Text = "sqrt(x)";
             btnRoot.UseVisualStyleBackColor = true;
+            btnRoot.Click += btnRoot_Click;
             // 
             // btnDivide
             // 
@@ -229,6 +231,7 @@
             btnDivide.TabIndex = 15;
             btnDivide.Text = "/";
             btnDivide.UseVisualStyleBackColor = true;
+            btnDivide.Click += btnDivide_Click;
             // 
             // btn7
             // 
@@ -239,6 +242,7 @@
             btn7.TabIndex = 16;
             btn7.Text = "7";
             btn7.UseVisualStyleBackColor = true;
+            btn7.Click += btn7_Click;
             // 
             // btn8
             // 
@@ -249,6 +253,7 @@
             btn8.TabIndex = 17;
             btn8.Text = "8";
             btn8.UseVisualStyleBackColor = true;
+            btn8.Click += btn8_Click;
             // 
             // btn9
             // 
@@ -259,6 +264,7 @@
             btn9.TabIndex = 18;
             btn9.Text = "9";
             btn9.UseVisualStyleBackColor = true;
+            btn9.Click += btn9_Click;
             // 
             // btnMultiply
             // 
@@ -269,6 +275,7 @@
             btnMultiply.TabIndex = 19;
             btnMultiply.Text = "X";
             btnMultiply.UseVisualStyleBackColor = true;
+            btnMultiply.Click += btnMultiply_Click;
             // 
             // btnSubtract
             // 
@@ -279,6 +286,7 @@
             btnSubtract.TabIndex = 23;
             btnSubtract.Text = "-";
             btnSubtract.UseVisualStyleBackColor = true;
+            btnSubtract.Click += btnSubtract_Click;
             // 
             // btn6
             // 
@@ -289,6 +297,7 @@
             btn6.TabIndex = 22;
             btn6.Text = "6";
             btn6.UseVisualStyleBackColor = true;
+            btn6.Click += btn6_Click;
             // 
             // btn5
             // 
@@ -299,6 +308,7 @@
             btn5.TabIndex = 21;
             btn5.Text = "5";
             btn5.UseVisualStyleBackColor = true;
+            btn5.Click += btn5_Click;
             // 
             // btn4
             // 
@@ -309,6 +319,7 @@
             btn4.TabIndex = 20;
             btn4.Text = "4";
             btn4.UseVisualStyleBackColor = true;
+            btn4.Click += btn4_Click;
             // 
             // btnAdd
             // 
@@ -319,6 +330,7 @@
             btnAdd.TabIndex = 27;
             btnAdd.Text = "+";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btn3
             // 
@@ -329,6 +341,7 @@
             btn3.TabIndex = 26;
             btn3.Text = "3";
             btn3.UseVisualStyleBackColor = true;
+            btn3.Click += btn3_Click;
             // 
             // btn2
             // 
@@ -339,6 +352,7 @@
             btn2.TabIndex = 25;
             btn2.Text = "2";
             btn2.UseVisualStyleBackColor = true;
+            btn2.Click += btn2_Click;
             // 
             // btn1
             // 
@@ -349,6 +363,7 @@
             btn1.TabIndex = 24;
             btn1.Text = "1";
             btn1.UseVisualStyleBackColor = true;
+            btn1.Click += btn1_Click;
             // 
             // btnSolve
             // 
@@ -359,6 +374,7 @@
             btnSolve.TabIndex = 31;
             btnSolve.Text = "=";
             btnSolve.UseVisualStyleBackColor = true;
+            btnSolve.Click += btnSolve_Click;
             // 
             // btnDecimal
             // 
@@ -369,6 +385,7 @@
             btnDecimal.TabIndex = 30;
             btnDecimal.Text = ".";
             btnDecimal.UseVisualStyleBackColor = true;
+            btnDecimal.Click += btnDecimal_Click;
             // 
             // btn0
             // 
@@ -379,6 +396,7 @@
             btn0.TabIndex = 29;
             btn0.Text = "0";
             btn0.UseVisualStyleBackColor = true;
+            btn0.Click += btn0_Click;
             // 
             // btnNegate
             // 
@@ -389,6 +407,7 @@
             btnNegate.TabIndex = 28;
             btnNegate.Text = "+/-";
             btnNegate.UseVisualStyleBackColor = true;
+            btnNegate.Click += btnNegate_Click;
             // 
             // tlpMain
             // 
@@ -408,29 +427,6 @@
             tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlpMain.Size = new Size(273, 359);
             tlpMain.TabIndex = 32;
-            // 
-            // tlpMemory
-            // 
-            tlpMemory.ColumnCount = 6;
-            tlpMemory.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tlpMemory.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tlpMemory.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tlpMemory.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tlpMemory.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tlpMemory.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tlpMemory.Controls.Add(btnMemoryClear, 0, 0);
-            tlpMemory.Controls.Add(btnMemoryReturn, 1, 0);
-            tlpMemory.Controls.Add(btnMemoryAdd, 2, 0);
-            tlpMemory.Controls.Add(btnMemorySubtract, 3, 0);
-            tlpMemory.Controls.Add(btnMemorySave, 4, 0);
-            tlpMemory.Controls.Add(btnMemoryAccess, 5, 0);
-            tlpMemory.Dock = DockStyle.Fill;
-            tlpMemory.Location = new Point(3, 99);
-            tlpMemory.Name = "tlpMemory";
-            tlpMemory.RowCount = 1;
-            tlpMemory.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpMemory.Size = new Size(267, 30);
-            tlpMemory.TabIndex = 33;
             // 
             // tlpKeys
             // 
@@ -476,6 +472,27 @@
             tlpKeys.Size = new Size(267, 221);
             tlpKeys.TabIndex = 33;
             // 
+            // tlpMemory
+            // 
+            tlpMemory.ColumnCount = 5;
+            tlpMemory.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
+            tlpMemory.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
+            tlpMemory.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
+            tlpMemory.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
+            tlpMemory.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
+            tlpMemory.Controls.Add(btnMemoryClear, 0, 0);
+            tlpMemory.Controls.Add(btnMemoryReturn, 1, 0);
+            tlpMemory.Controls.Add(btnMemoryAdd, 2, 0);
+            tlpMemory.Controls.Add(btnMemorySubtract, 3, 0);
+            tlpMemory.Controls.Add(btnMemorySave, 4, 0);
+            tlpMemory.Dock = DockStyle.Fill;
+            tlpMemory.Location = new Point(3, 99);
+            tlpMemory.Name = "tlpMemory";
+            tlpMemory.RowCount = 1;
+            tlpMemory.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpMemory.Size = new Size(267, 30);
+            tlpMemory.TabIndex = 33;
+            // 
             // FCalculator
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -488,10 +505,11 @@
             Name = "FCalculator";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Calculator";
+            Load += FCalculator_Load;
             tlpMain.ResumeLayout(false);
             tlpMain.PerformLayout();
-            tlpMemory.ResumeLayout(false);
             tlpKeys.ResumeLayout(false);
+            tlpMemory.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -504,7 +522,6 @@
         private Button btnMemoryAdd;
         private Button btnMemorySubtract;
         private Button btnMemorySave;
-        private Button btnMemoryAccess;
         private Button btnPercent;
         private Button btnClearEntry;
         private Button btnClear;
