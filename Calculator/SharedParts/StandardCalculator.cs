@@ -12,8 +12,6 @@ namespace GEM.Calculator
         public MathNodes.IMathNode CurrentFunction;
         public MathNodes.ConstantNode CurrentInput;
 
-        public double CurrentValue => CurrentInput.Value;
-
         private string _entry = "0";
         private bool _hasDecimal = false;
 
@@ -42,6 +40,7 @@ namespace GEM.Calculator
             Entry = r.ToString();
         }
 
+        // MEMORY FUNCTIONS
         public void ClearMemory()
         {
             _memory = 0;
@@ -63,6 +62,7 @@ namespace GEM.Calculator
             _memory = Convert.ToDouble(Entry);
         }
 
+        // OPERATOR NODES
         public void PressRoot()
         {
             MathNodes.SqRootNode node = new MathNodes.SqRootNode(CurrentFunction);
@@ -84,6 +84,7 @@ namespace GEM.Calculator
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentFunction)));
         }
 
+        // OPERATIONS
         public void PressDivide()
         {
             MathNodes.DivisionNode aNode = new MathNodes.DivisionNode(
@@ -121,6 +122,7 @@ namespace GEM.Calculator
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentFunction)));
         }
 
+        // DIGITS
         private void CheckSetAddDigit(char digit)
         {
             if (Entry == "0")
@@ -131,13 +133,6 @@ namespace GEM.Calculator
             {
                 Entry += digit;
             }
-        }
-
-        public void PressNegate()
-        {
-            double i = Convert.ToDouble(Entry);
-            i *= -1;
-            Entry = i.ToString();
         }
         public void Press9() => CheckSetAddDigit('9');
         public void Press8() => CheckSetAddDigit('8');
@@ -155,6 +150,8 @@ namespace GEM.Calculator
                 Entry += "0";
             }
         }
+
+        // NUMERIC CONTROLS
         public void PressDecimal()
         {
             if (!_hasDecimal)
@@ -163,11 +160,24 @@ namespace GEM.Calculator
                 _hasDecimal = true;
             }
         }
-
+        public void PressNegate()
+        {
+            double i = Convert.ToDouble(Entry);
+            i *= -1;
+            Entry = i.ToString();
+        }
         public void PressBackspace()
         {
             Entry = Entry.Substring(0, Entry.Length - 1);
         }
+        public void PressPercent()
+        {
+            double i = Convert.ToDouble(Entry);
+            i *= 0.01;
+            Entry = i.ToString();
+        }
+
+        // CLEAR
         public void PressClearEntry()
         {
             Entry = "0";
@@ -179,12 +189,6 @@ namespace GEM.Calculator
             CurrentInput = CurrentFunction as MathNodes.ConstantNode;
             PressClearEntry();
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentFunction)));
-        }
-        public void PressPercent()
-        {
-            double i = Convert.ToDouble(Entry);
-            i *= 0.01;
-            Entry = i.ToString();
         }
     }
 }
